@@ -8,8 +8,8 @@ const config = {
 const styles = {
 	global: (props) => ({
 		body: {
-			color: mode('gray.800', 'white')(props),
-			bg: mode('gray.100', 'gray.900')(props),
+			color: mode('gray.900', 'white')(props),
+			bg: mode('gray.100', '#111')(props),
 		}
 	})
 };
@@ -17,7 +17,8 @@ const styles = {
 const theme = extendTheme({
 	config,
 	fonts: {
-		body: 'DM Sans'
+		body: 'Work Sans',
+		heading: 'Work Sans',
 	},
 	styles
 });
