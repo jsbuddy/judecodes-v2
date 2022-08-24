@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import projects from "../lib/projects";
 import Project from "./Project";
 import ProjectDetails from "./ProjectDetails.jsx";
-import { AnimatePresence } from "framer-motion";
 
 const Projects = () => {
   const { isOpen: isDetailsOpen, onOpen: onDetailsOpen, onClose: onDetailsClose } = useDisclosure();
@@ -17,7 +16,7 @@ const Projects = () => {
   return (
     <>
       <Container maxW="full" overflow="hidden" px={ { base: 0, md: 4 } }>
-        <SimpleGrid columns={ { base: 1, md: 2, lg: 2 } } spacing={ { base: 4, lg: 4 } } overflow="hidden">
+        <SimpleGrid columns={ { base: 1, md: 2, lg: 3 } } spacing={ { base: 4, lg: 4 } } overflow="hidden">
           {
             projects.map((project) => (
               <Project key={ project.id } project={ project } onClick={ () => handleOpen(project) }/>
@@ -26,18 +25,11 @@ const Projects = () => {
         </SimpleGrid>
       </Container>
 
-      <AnimatePresence>
-        {
-          isDetailsOpen && (
-            <ProjectDetails
-              project={ current }
-              onClose={ () => {
-                onDetailsClose()
-              } }
-            />
-          )
-        }
-      </AnimatePresence>
+      <ProjectDetails
+        project={ current }
+        isOpen={ isDetailsOpen }
+        onClose={ onDetailsClose }
+      />
     </>
   );
 };

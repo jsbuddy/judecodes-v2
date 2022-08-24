@@ -17,8 +17,8 @@ const styles = {
 const theme = extendTheme({
 	config,
 	fonts: {
-		body: 'Work Sans',
-		heading: 'Work Sans',
+		body: 'DM Sans',
+		heading: 'DM Sans',
 	},
 	styles
 });

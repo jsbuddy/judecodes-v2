@@ -1,8 +1,10 @@
-import { Avatar, Box, Button, Container, Flex, Heading, Text } from "@chakra-ui/react";
+import { Avatar, Box, Button, Container, Flex, Heading, Text, useColorMode } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { HiArrowRight } from "react-icons/hi";
 
 const Header = () => {
+  const { colorMode } = useColorMode();
+
   return (
     <>
       <Flex direction="column" justify="center">
@@ -39,8 +41,11 @@ const Header = () => {
                 </Text>
                 <Flex align="center">
                   <Button
-                    rounded="full" mt="10" rightIcon={ <HiArrowRight/> } px="6" backgroundColor="gray.800"
-                    color="#fff" _hover={ { background: "gray.700" } } _active={ { background: 'gray.700' } }
+                    rounded="full" mt="10" rightIcon={ <HiArrowRight/> } px="6"
+                    backgroundColor={ colorMode === 'light' ? 'gray.800' : 'gray.200' }
+                    color={ colorMode === 'light' ? '#fff' : 'gray.900' }
+                    _hover={ { background: colorMode === 'light' ? 'gray.700' : 'gray.50' } }
+                    _active={ { background: colorMode === 'light' ? 'gray.600' : 'gray.400' } }
                   >
                     Get in touch
                   </Button>

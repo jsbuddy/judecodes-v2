@@ -1,4 +1,4 @@
-export default [
+let projects = [
   {
     id: 'creditclan',
     category: 'web',
@@ -27,20 +27,20 @@ export default [
     image: '/images/projects/mizala.png',
     link: 'https://mizala.co'
   },
-  {
-    id: 'lcu',
-    category: 'web',
-    title: 'Le Citoyen University',
-    image: '/images/projects/lcu.png',
-    link: 'https://lecitoyenuniversity.org'
-  },
-  {
-    id: 'estam',
-    category: 'web',
-    title: 'Estam University',
-    image: '/images/projects/estam.png',
-    link: 'https://estamuni.net'
-  },
+  // {
+  //   id: 'lcu',
+  //   category: 'web',
+  //   title: 'Le Citoyen University',
+  //   image: '/images/projects/lcu.png',
+  //   link: 'https://lecitoyenuniversity.org'
+  // },
+  // {
+  //   id: 'estam',
+  //   category: 'web',
+  //   title: 'Estam University',
+  //   image: '/images/projects/estam.png',
+  //   link: 'https://estamuni.net'
+  // },
   // {
   //   id: 'quick-chat',
   //   category: 'web',
@@ -78,4 +78,6 @@ export default [
   //   image: '/images/projects/vendor-advisor.png',
   //   link: 'https://vendor-advisor.herokuapp.com'
   // },
-]
+];
+
+export default projects;

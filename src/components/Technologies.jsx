@@ -25,7 +25,7 @@ const Technologies = () => {
   return (
     <Container maxW="5xl" py="36">
       <Heading fontSize={ { base: '4xl', md: '5xl' } } maxW="2xl" lineHeight="1.4">
-        My tools
+        My Tools
       </Heading>
       <Text fontSize={ { base: 'lg', md: "lg" } } mt="1" opacity=".7">
         A few technologies I'm comfortable working with.
@@ -35,11 +35,13 @@ const Technologies = () => {
         spacing="10" mt="20" textAlign="center"
       >
         {
-          icons.map((icon, index) => (
-            <Flex key={ index } justify="center" opacity=".9">
-              { icon }
-            </Flex>
-          ))
+          icons.map((icon, index) => {
+            return (
+              <Flex key={ index } align="center" opacity=".9" transform="scale(.95)">
+                { icon }
+              </Flex>
+            );
+          })
         }
       </SimpleGrid>
       <VStack display={ { base: 'none', md: 'flex' } } spacing="10" align="stretch" mt="20">
