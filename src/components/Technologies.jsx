@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Flex, Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
-import { SiGithub, SiKotlin, SiNodedotjs, SiNuxtdotjs, SiTailwindcss, SiWindows } from "react-icons/si";
+import { Container, Flex, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { SiGit, SiKotlin, SiNodedotjs, SiNuxtdotjs, SiTailwindcss, SiWindows } from "react-icons/si";
 import { RiAngularjsFill, RiReactjsFill, RiVuejsFill } from "react-icons/ri";
 import { TbBrandNextjs } from "react-icons/tb";
 import { MdOutlineAndroid } from "react-icons/md";
@@ -17,18 +17,15 @@ const icons = [
   <SiKotlin size="45"/>,
   <MdOutlineAndroid size="65"/>,
   <CgFigma size="65"/>,
-  <SiGithub size="55"/>,
+  <SiGit size="55"/>,
   <SiWindows size="55"/>,
 ];
 
 const Technologies = () => {
   return (
-    <Container maxW="5xl" py="36">
-      <Heading fontSize={ { base: '4xl', md: '5xl' } } maxW="2xl" lineHeight="1.4">
-        My Tools
-      </Heading>
-      <Text fontSize={ { base: 'lg', md: "lg" } } mt="1" opacity=".7">
-        A few technologies I'm comfortable working with.
+    <Container maxW="6xl" py="36">
+      <Text fontSize={ { base: '1.7rem', md: '2.2rem' } } maxW="550" fontWeight="medium">
+        A few technologies I've been working with recently
       </Text>
       <SimpleGrid
         display={ { base: 'grid', md: 'none' } } columns={ { base: 3, md: 6 } }
@@ -37,7 +34,7 @@ const Technologies = () => {
         {
           icons.map((icon, index) => {
             return (
-              <Flex key={ index } align="center" opacity=".9" transform="scale(.95)">
+              <Flex key={ index } align="center" opacity=".9" transform="scale(.9)">
                 { icon }
               </Flex>
             );

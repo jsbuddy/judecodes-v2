@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <Box position="absolute" top="0" left="0" width="full" as="nav">
-      <Container maxW="5xl" height="120px" display="flex" alignItems="center">
+      <Container maxW="6xl" height="120px" display="flex" alignItems="center">
         <Logo/>
         <Spacer/>
         <HStack spacing="6">

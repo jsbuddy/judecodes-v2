@@ -4,7 +4,8 @@ let projects = [
     category: 'web',
     title: 'Creditclan official website',
     image: '/images/projects/creditclan.png',
-    link: 'https://creditclan.com'
+    link: 'https://creditclan.com',
+    description: ``
   },
   {
     id: 'cribstock',

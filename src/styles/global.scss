@@ -55,3 +55,8 @@ body {
   //radial-gradient(at 80% 100%, hsla(240, 52%, 16%, 1) 0px, transparent 50%),
   //radial-gradient(at 0% 0%, hsla(240, 75%, 15%, 1) 0px, transparent 50%) !important;
 }
+
+::selection {
+  color: #fff;
+  background: #7e2c2c;
+}
