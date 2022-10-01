@@ -25,7 +25,7 @@ const ContactModal = ({ isOpen, onClose }) => {
   return (
     <Modal onClose={ onClose } isOpen={ isOpen } isCentered size="lg">
       <ModalOverlay/>
-      <ModalContent bg={ useColorModeValue('white', '#26262f') }>
+      <ModalContent bg={ useColorModeValue('white', '#26262f') } rounded="2xl">
         <Flex align="center" justify="space-between" pt="10" pb="0" px={ { base: 6, md: 10 } }>
           <ModalHeader p="0" whiteSpace="nowrap" fontSize="2xl">Get in touch</ModalHeader>
           <ModalCloseButton position="relative" inset="initial"/>
@@ -35,7 +35,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             <Flex
               as="a" href="mailto:judecodes@gmail.com" target="_blank"
               direction="column" align="center" border="1px solid" cursor="pointer"
-              borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="xl" px="8"
+              borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
               py={ { base: 6, md: 8 } }
               _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
             >
@@ -45,7 +45,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             <Flex
               as="a" href="https://github.com/jsbuddy" target="_blank"
               direction="column" align="center" border="1px solid" cursor="pointer"
-              borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="xl" px="8"
+              borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
               py={ { base: 6, md: 8 } }
               _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
             >
@@ -55,7 +55,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             <Flex
               as="a" href="https://codepen.io/judecodes" target="_blank"
               direction="column" align="center" border="1px solid" cursor="pointer"
-              borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="xl" px="8"
+              borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
               py={ { base: 6, md: 8 } }
               _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
             >
@@ -65,7 +65,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             <Flex
               as="a" href="https://t.me/judecodes" target="_blank"
               direction="column" align="center" border="1px solid" cursor="pointer"
-              borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="xl" px="8"
+              borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
               py={ { base: 6, md: 8 } }
               _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
             >
@@ -75,7 +75,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             <Flex
               as="a" href="https://www.linkedin.com/in/judecodes/" target="_blank"
               direction="column" align="center" border="1px solid" cursor="pointer"
-              borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="xl" px="8"
+              borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
               py={ { base: 6, md: 8 } }
               _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
             >
@@ -85,7 +85,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             <Flex
               as="a" href="https://twitter.com/judecodes" target="_blank"
               direction="column" align="center" border="1px solid" cursor="pointer"
-              borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="xl" px="8"
+              borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
               py={ { base: 6, md: 8 } }
               _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
             >
