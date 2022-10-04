@@ -94,7 +94,9 @@ const ContactModal = ({ isOpen, onClose }) => {
             </Flex>
           </SimpleGrid>
           <Flex
-            align="center" border="1px solid" px="6" py="4" rounded="xl" mt="6"
+            as="a" target="_blank"
+            href="https://docs.google.com/document/d/1_Zg9FNjpGtmJQv7Q0fKfVscEFsmhRpLX8RqiIrqz7v8/edit?usp=sharing"
+            align="center" border="1px solid" px="6" py="4" rounded="xl" mt="6" cursor="pointer"
             borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") }
             _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
           >
