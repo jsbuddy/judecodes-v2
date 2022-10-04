@@ -3,11 +3,13 @@ import { FiExternalLink, FiGithub, FiX } from "react-icons/fi";
 import { MotionBox, MotionImage } from "./motion";
 import React, { useEffect, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
+import { useKey } from "react-use";
 
 const ProjectDetails = ({ project, isOpen, onClose }) => {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
   const rootRef = useRef(null);
+  useKey('Escape', onClose);
 
   useEffect(() => {
     if (isOpen) document.body.style.overflow = 'hidden';
