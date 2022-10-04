@@ -5,28 +5,31 @@ let projects = [
     title: 'Creditclan official website',
     image: '/images/projects/creditclan.png',
     link: 'https://creditclan.com',
-    description: ``
+    description: `Creditclan helps businesses & individuals offer point of need credit to consumers across Africa. As frontend team lead I worked on and supervised the development of Creditclan's official website which was built using VueJS`
   },
   {
     id: 'cribstock',
     category: 'web',
     title: 'Cribstock',
     image: '/images/projects/cribstock.png',
-    link: 'https://www.cribstock.com'
+    link: 'https://www.cribstock.com',
+    description: `Cribstock is a community where young professionals can participate to own real estate as a means to wealth creation. As co-founder and frontend engineer at Cribstock, I built the web platform from scratch using React, Next.js & Chakra UI`
   },
   {
     id: 'mizala-p2p',
     category: 'web',
     title: 'Mizala p2p insurance',
     image: '/images/projects/mizala-p2p.png',
-    link: 'https://p2p.mizala.co'
+    link: 'https://p2p.mizala.co',
+    description: `Mizala p2p is a peer-to-peer insurance network of over 2,000 people, where individuals pool their premiums together to insure against a common risk. I was part of a team of 2 and played an essential role in the development of Mizala's p2p web platform which is built using React, NextJS & Tailwind`
   },
   {
     id: 'mizala',
     category: 'web',
     title: 'Mizala official website',
     image: '/images/projects/mizala.png',
-    link: 'https://mizala.co'
+    link: 'https://mizala.co',
+    description: `Mizala aims to make insurance available and affordable for Nigerians and offers a variety of products ranging from Auto insurance to peer to peer insurance. I was part of a team of 2 and played an essential role in the development of Mizala's web platform which is built using React, NextJS & Tailwind`
   },
   // {
   //   id: 'lcu',
@@ -59,18 +62,20 @@ let projects = [
   //   github: 'https://github.com/jsbuddy/tasks'
   // },
   {
-    id: 'field-oracle',
+    id: 'fieldoracle',
     category: 'web',
-    title: 'Field oracle',
+    title: 'Fieldoracle',
     image: '/images/projects/fieldoracle.png',
-    link: 'https://fieldoracle.com'
+    link: 'https://fieldoracle.com',
+    description: `Fieldoracle is an online market place connecting researchers with freelance agents to assist with data collection on the field. As a contractor, I implemented the designs you see on field oracle using Vue JS and Tailwind CSS`
   },
   {
     id: 'taximoni',
     category: 'web',
     title: 'Taximoni',
     image: '/images/projects/taximoni.png',
-    link: 'https://taximoni.com'
+    link: 'https://taximoni.com',
+    description: `Taximoni offers loans to Taxi drivers within certain communities. I was responsible for the development of Taximoni from the ground up using NuxtJS and Ant design`
   },
   // {
   //   id: 'vendor-advisor',

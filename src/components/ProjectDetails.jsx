@@ -66,12 +66,8 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
                             onClick={ onClose } aria-label="close" ml="4"
                           />
                         </Flex>
-                        <Text mt="6">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quaerat consectetur odit ea
-                          quia
-                          magni, non dolores vero error soluta? Distinctio dolore dolorem accusantium sunt nobis pariatur
-                          consectetur ex excepturi officia perspiciatis a fugiat, amet molestiae sint iure itaque nisi vel
-                          rem.
+                        <Text fontSize="md" mt="6">
+                          { project.description }
                         </Text>
                         <Flex mt="8">
                           {
