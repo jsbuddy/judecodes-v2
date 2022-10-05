@@ -2,7 +2,7 @@ import { extendTheme } from "@chakra-ui/react";
 import { mode } from '@chakra-ui/theme-tools';
 
 const config = {
-  initialColorMode: "light",
+  initialColorMode: "system",
 };
 
 const styles = {
@@ -17,8 +17,8 @@ const styles = {
 const theme = extendTheme({
   config,
   fonts: {
-    body: 'DM Sans',
-    heading: 'DM Sans',
+    body: 'Satoshi',
+    heading: 'Satoshi',
   },
   styles
 });

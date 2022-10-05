@@ -68,7 +68,7 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
                             onClick={ onClose } aria-label="close" ml="4"
                           />
                         </Flex>
-                        <Text fontSize="md" mt="6">
+                        <Text fontSize="1.1rem" mt="6">
                           { project.description }
                         </Text>
                         <Flex mt="8">
