@@ -1,11 +1,11 @@
 let projects = [
   {
-    id: 'creditclan',
+    id: 'clan',
     category: 'web',
-    title: 'Creditclan official website',
-    image: '/images/projects/creditclan.png',
+    title: 'Clan',
+    image: '/images/projects/clan.png',
     link: 'https://creditclan.com',
-    description: `Creditclan helps businesses & individuals offer point of need credit to consumers across Africa. As frontend team lead I worked on and supervised the development of Creditclan's official website which was built using VueJS`
+    description: `Clan helps businesses & individuals offer point of need credit to consumers across Africa. As frontend team lead I worked on and supervised the development of Creditclan's official website which was built using VueJS`
   },
   {
     id: 'cribstock',
