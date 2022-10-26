@@ -1,4 +1,4 @@
-import { Box, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { motion, usePresence } from "framer-motion";
 import { MotionBox, MotionImage } from "./motion";
 
@@ -39,10 +39,7 @@ const Project = ({ project, onClick }) => {
   return (
     <>
       <motion.div { ...props }>
-        <Box
-          position="relative" overflow="hidden" rounded={ { base: "sm", md: "lg" } } border="1px solid"
-          borderColor={ useColorModeValue('blackAlpha.100', 'whiteAlpha.200') }
-        >
+        <Box position="relative" overflow="hidden" rounded={ { base: "sm", md: "lg" } }>
           <MotionBox layoutId={ `project-${ project.id }` } w="full" h="310px">
             <MotionImage
               layoutId={ `project-image-${ project.id }` } src={ project.image } w="full" h="full" zIndex="1"
