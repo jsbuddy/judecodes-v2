@@ -4,10 +4,12 @@ import { MotionBox, MotionImage } from "./motion";
 import React, { useEffect, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useKey } from "react-use";
+import { useMixpanel } from "../hooks/use-mixpanel.js";
 
 const ProjectDetails = ({ project, isOpen, onClose }) => {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
+  const { track } = useMixpanel();
   const rootRef = useRef(null);
   useKey('Escape', onClose);
 
@@ -29,6 +31,11 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
     exit: "out",
     initial: "out",
   };
+
+  const handleVisit = () => {
+    window.open(project.link, '_blank');
+    track(`Visited project - ${ project.title }`);
+  }
 
   return (
     <>
@@ -81,7 +88,7 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
                             )
                           }
                           <Button
-                            as={ "a" } href={ project.link } target="_blank" rightIcon={ <FiExternalLink/> } rounded="30"
+                            onClick={ handleVisit } rightIcon={ <FiExternalLink/> } rounded="30"
                             px="5" backgroundColor="gray.800" color="#fff" _hover={ { background: "gray.900" } }
                             _active={ { background: "gray.900" } }
                           >

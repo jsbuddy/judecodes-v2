@@ -3,12 +3,15 @@ import React, { useState } from "react";
 import projects from "../lib/projects";
 import Project from "./Project";
 import ProjectDetails from "./ProjectDetails.jsx";
+import { useMixpanel } from "../hooks/use-mixpanel.js";
 
 const Projects = () => {
   const { isOpen: isDetailsOpen, onOpen: onDetailsOpen, onClose: onDetailsClose } = useDisclosure();
   const [current, setCurrent] = useState(null);
+  const { track } = useMixpanel();
 
   const handleOpen = (project) => {
+    track(`Viewed project - ${ project.title }`);
     setCurrent(project);
     onDetailsOpen();
   }

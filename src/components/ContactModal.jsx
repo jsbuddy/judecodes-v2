@@ -20,8 +20,16 @@ import {
   RiTelegramLine,
   RiTwitterFill
 } from "react-icons/ri";
+import { useMixpanel } from "../hooks/use-mixpanel.js";
 
 const ContactModal = ({ isOpen, onClose }) => {
+  const { track } = useMixpanel();
+
+  const handleClick = (name, link) => {
+    track(`Clicked contact - ${ name }`);
+    window.open(link, '_blank');
+  };
+
   return (
     <Modal onClose={ onClose } isOpen={ isOpen } isCentered size="lg">
       <ModalOverlay/>
@@ -33,7 +41,7 @@ const ContactModal = ({ isOpen, onClose }) => {
         <ModalBody py="12" px={ { base: 6, md: 10 } }>
           <SimpleGrid columns={ { base: 3, md: 3 } } spacing={ { base: 3, md: 4 } }>
             <Flex
-              as="a" href="mailto:judecodes@gmail.com" target="_blank"
+              onClick={ () => handleClick('Email', 'mailto:judecodes@gmail.com') }
               direction="column" align="center" border="1px solid" cursor="pointer"
               borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
               py={ { base: 6, md: 8 } }
@@ -43,7 +51,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               <Text mt="3">Email</Text>
             </Flex>
             <Flex
-              as="a" href="https://github.com/jsbuddy" target="_blank"
+              onClick={ () => handleClick('Github', 'https://github.com/jsbuddy') }
               direction="column" align="center" border="1px solid" cursor="pointer"
               borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
               py={ { base: 6, md: 8 } }
@@ -53,7 +61,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               <Text mt="3">Github</Text>
             </Flex>
             <Flex
-              as="a" href="https://codepen.io/judecodes" target="_blank"
+              onClick={ () => handleClick('Codepen', 'https://codepen.io/judecodes') }
               direction="column" align="center" border="1px solid" cursor="pointer"
               borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
               py={ { base: 6, md: 8 } }
@@ -63,7 +71,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               <Text mt="3">Codepen</Text>
             </Flex>
             <Flex
-              as="a" href="https://t.me/judecodes" target="_blank"
+              onClick={ () => handleClick('Telegram', 'https://t.me/judecodes') }
               direction="column" align="center" border="1px solid" cursor="pointer"
               borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
               py={ { base: 6, md: 8 } }
@@ -73,7 +81,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               <Text mt="3">Telegram</Text>
             </Flex>
             <Flex
-              as="a" href="https://www.linkedin.com/in/judecodes/" target="_blank"
+              onClick={ () => handleClick('Linkedin', 'https://www.linkedin.com/in/judecodes/') }
               direction="column" align="center" border="1px solid" cursor="pointer"
               borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
               py={ { base: 6, md: 8 } }
@@ -83,7 +91,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               <Text mt="3">Linkedin</Text>
             </Flex>
             <Flex
-              as="a" href="https://twitter.com/judecodes" target="_blank"
+              onClick={ () => handleClick('Twitter', 'https://twitter.com/judecodes') }
               direction="column" align="center" border="1px solid" cursor="pointer"
               borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
               py={ { base: 6, md: 8 } }
@@ -94,8 +102,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             </Flex>
           </SimpleGrid>
           <Flex
-            as="a" target="_blank"
-            href="https://docs.google.com/document/d/1_Zg9FNjpGtmJQv7Q0fKfVscEFsmhRpLX8RqiIrqz7v8/edit?usp=sharing"
+            onClick={ () => handleClick('Resume', 'https://docs.google.com/document/d/1_Zg9FNjpGtmJQv7Q0fKfVscEFsmhRpLX8RqiIrqz7v8/edit?usp=sharing') }
             align="center" border="1px solid" px="6" py="4" rounded="xl" mt="6" cursor="pointer"
             borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") }
             _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
