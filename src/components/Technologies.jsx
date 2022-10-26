@@ -6,19 +6,19 @@ import { TbBrandNextjs } from "react-icons/tb";
 import { MdOutlineAndroid } from "react-icons/md";
 import { CgFigma } from "react-icons/cg";
 
-const icons = [
-  <SiNodedotjs size="65"/>,
-  <RiReactjsFill size="65"/>,
-  <TbBrandNextjs size="65"/>,
-  <SiTailwindcss size="65"/>,
-  <RiVuejsFill size="65"/>,
-  <SiNuxtdotjs size="65"/>,
-  <RiAngularjsFill size="65"/>,
-  <SiKotlin size="45"/>,
-  <MdOutlineAndroid size="65"/>,
-  <CgFigma size="65"/>,
-  <SiGit size="55"/>,
-  <SiWindows size="55"/>,
+const items = [
+  { name: 'Node JS', link: 'https://nodejs.org', icon: <SiNodedotjs size="65"/>, },
+  { name: 'React JS', link: 'https://reactjs.org', icon: <RiReactjsFill size="65"/>, },
+  { name: 'Next JS', link: 'https://nextjs.org', icon: <TbBrandNextjs size="65"/>, },
+  { name: 'Tailwind CSS', link: 'https://tailwindcss.com', icon: <SiTailwindcss size="65"/> },
+  { name: 'Vue JS', link: 'https://vuejs.org', icon: <RiVuejsFill size="65"/> },
+  { name: 'Nuxt JS', link: 'https://nuxtjs.org', icon: <SiNuxtdotjs size="65"/> },
+  { name: 'Angular JS', link: 'https://angular.io', icon: <RiAngularjsFill size="65"/> },
+  { name: 'Kotlin', link: 'https://kotlinlang.org', icon: <SiKotlin size="45"/> },
+  { name: 'Android', link: 'https://android.com', icon: <MdOutlineAndroid size="65"/> },
+  { name: 'Figma', link: 'https://figma.com', icon: <CgFigma size="65"/> },
+  { name: 'Git', link: 'https://git-scm.com', icon: <SiGit size="55"/> },
+  { name: 'Windows', link: 'https://windows.com', icon: <SiWindows size="55"/> },
 ];
 
 const Technologies = () => {
@@ -32,10 +32,13 @@ const Technologies = () => {
         spacing="10" mt="20" textAlign="center"
       >
         {
-          icons.map((icon, index) => {
+          items.map((item, index) => {
             return (
-              <Flex key={ index } align="center" opacity=".9" transform="scale(.9)">
-                { icon }
+              <Flex
+                as="a" href={ item.link } target="_blank" key={ index } title={ item.name } align="center" opacity=".9"
+                transform="scale(.9)"
+              >
+                { item.icon }
               </Flex>
             );
           })
@@ -44,18 +47,18 @@ const Technologies = () => {
       <VStack display={ { base: 'none', md: 'flex' } } spacing="10" align="stretch" mt="20">
         <Flex direction="row" justify="space-between" align="center">
           {
-            icons.slice(0, 6).map((icon, index) => (
-              <Flex key={ index } opacity=".9">
-                { icon }
+            items.slice(0, 6).map((item, index) => (
+              <Flex as="a" href={ item.link } target="_blank" key={ index } title={ item.name } opacity=".9">
+                { item.icon }
               </Flex>
             ))
           }
         </Flex>
         <Flex direction="row" justify="space-between" align="center">
           {
-            icons.slice(6, 12).map((icon, index) => (
-              <Flex key={ index } opacity=".9">
-                { icon }
+            items.slice(6, 12).map((item, index) => (
+              <Flex as="a" href={ item.link } target="_blank" key={ index } title={ item.name } opacity=".9">
+                { item.icon }
               </Flex>
             ))
           }
