@@ -40,7 +40,7 @@ const Project = ({ project, onClick }) => {
     <>
       <motion.div { ...props }>
         <Box position="relative" overflow="hidden" rounded={ { base: "sm", md: "lg" } }>
-          <MotionBox layoutId={ `project-${ project.id }` } w="full" h="310px">
+          <MotionBox layoutId={ `project-${ project.id }` } w="full" h={ { base: '270px', md: '310px' } }>
             <MotionImage
               layoutId={ `project-image-${ project.id }` } src={ project.image } w="full" h="full" zIndex="1"
               rounded={ { base: "sm", md: "lg" } } objectFit="cover"
