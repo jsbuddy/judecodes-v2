@@ -16,7 +16,6 @@ import {
   RiGithubLine,
   RiLinkedinLine,
   RiMailSendLine,
-  RiProfileLine,
   RiTelegramLine,
   RiTwitterFill
 } from "react-icons/ri";
@@ -101,15 +100,6 @@ const ContactModal = ({ isOpen, onClose }) => {
               <Text mt="3">Twitter</Text>
             </Flex>
           </SimpleGrid>
-          <Flex
-            onClick={ () => handleClick('Resume', 'https://docs.google.com/document/d/1_Zg9FNjpGtmJQv7Q0fKfVscEFsmhRpLX8RqiIrqz7v8/edit?usp=sharing') }
-            align="center" border="1px solid" px="6" py="4" rounded="xl" mt="6" cursor="pointer"
-            borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") }
-            _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
-          >
-            <RiProfileLine size="24"/>
-            <Text ml="4">View Resume</Text>
-          </Flex>
         </ModalBody>
       </ModalContent>
     </Modal>
