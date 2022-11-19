@@ -33,11 +33,11 @@ const ContactModal = ({ isOpen, onClose }) => {
     <Modal onClose={ onClose } isOpen={ isOpen } isCentered size="lg">
       <ModalOverlay/>
       <ModalContent bg={ useColorModeValue('white', '#26262f') } rounded="2xl">
-        <Flex align="center" justify="space-between" pt="10" pb="0" px={ { base: 6, md: 10 } }>
+        <Flex align="center" justify="space-between" pt="10" pb="0" px={ { base: 8, md: 10 } }>
           <ModalHeader p="0" whiteSpace="nowrap" fontSize="2xl">Get in touch</ModalHeader>
           <ModalCloseButton position="relative" inset="initial"/>
         </Flex>
-        <ModalBody py="12" px={ { base: 6, md: 10 } }>
+        <ModalBody py="12" px={ { base: 8, md: 10 } }>
           <SimpleGrid columns={ { base: 3, md: 3 } } spacing={ { base: 3, md: 4 } }>
             <Flex
               onClick={ () => handleClick('Email', 'mailto:judecodes@gmail.com') }
