@@ -19,20 +19,16 @@ const Header = () => {
             } }
           >
             <Flex
-              width="full"
-              direction={ { base: "column-reverse", md: "row" } }
-              align={ { base: "flex-start", md: "center" } }
-              justify="space-between"
-              pt={ { base: "48", md: "56" } }
-              pb="28"
+              width="full" justify="space-between" direction={ { base: "column-reverse", md: "row" } }
+              align={ { base: "flex-start", md: "center" } } pt={ { base: "20", md: "24" } } pb="28"
             >
               <Box mr={ { base: 0, lg: 5 } } mt={ { base: 6, lg: 0 } }>
                 <Text fontSize={ { base: '1.7rem', md: '2.2rem' } } fontWeight="medium">
                   Hello! 👋🏽
                 </Text>
                 <Text
-                  fontSize={ { base: '1.7rem', md: '2.2rem' } } maxW="700" pr="10" mt={ { base: 12, md: 8 } } lineHeight="1.6"
-                  verticalAlign="middle"
+                  fontSize={ { base: '1.7rem', md: '2.2rem' } } maxW="700" pr="10" mt={ { base: 12, md: 8 } }
+                  lineHeight="1.6" verticalAlign="middle"
                 >
                   I'm <Text as="span" fontWeight="semibold">Jude Francis</Text>, a frontend engineer with a passion
                   for creating beautiful, intuitive, and accessible experiences. Find some of my work below.

@@ -7,7 +7,7 @@ const Navbar = () => {
   const isDark = colorMode === "dark";
 
   return (
-    <Box position="absolute" top="0" left="0" width="full" as="nav">
+    <Box width="full" as="nav">
       <Container maxW="6xl" height="120px" display="flex" alignItems="center">
         <Logo/>
         <Spacer/>
