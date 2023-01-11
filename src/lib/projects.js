@@ -5,7 +5,7 @@ let projects = [
     title: 'Clan',
     image: '/images/projects/clan.png',
     link: 'https://creditclan.com',
-    description: `Clan helps businesses & individuals offer point of need credit to consumers across Africa. As frontend team lead I worked on and supervised the development of Creditclan's official website which was built using VueJS`
+    description: `Clan helps businesses & individuals offer point of need credit to consumers across Africa. As frontend team lead I worked on and supervised the development of Creditclan's official website which was built using VueJS and Bootstrap`
   },
   {
     id: 'cribstock',
@@ -13,7 +13,7 @@ let projects = [
     title: 'Cribstock',
     image: '/images/projects/cribstock.png',
     link: 'https://www.cribstock.com',
-    description: `Cribstock is a community where young professionals can participate to own real estate as a means to wealth creation. As co-founder and frontend engineer at Cribstock, I built the web platform from scratch using React, Next.js & Chakra UI`
+    description: `Cribstock is a community where young professionals can participate to own real estate as a means to wealth creation. As co-founder and frontend engineer at Cribstock, I developed the web platform using React, Next.js & Chakra UI`
   },
   {
     id: 'mizala-p2p',
@@ -67,7 +67,7 @@ let projects = [
     title: 'Fieldoracle',
     image: '/images/projects/fieldoracle.png',
     link: 'https://fieldoracle.com',
-    description: `Fieldoracle is an online market place connecting researchers with freelance agents to assist with data collection on the field. As a contractor, I implemented the designs you see on field oracle using Vue JS and Tailwind CSS`
+    description: `Fieldoracle is an online marketplace connecting researchers with freelance agents to assist with data collection on the field. I developed the UI elements and components used in Fieldoracle using Vue JS and Tailwind CSS`
   },
   {
     id: 'taximoni',
@@ -75,7 +75,15 @@ let projects = [
     title: 'Taximoni',
     image: '/images/projects/taximoni.png',
     link: 'https://taximoni.com',
-    description: `Taximoni offers loans to Taxi drivers within certain communities. I was responsible for the development of Taximoni from the ground up using NuxtJS and Ant design`
+    description: `Taximoni offers flexible loans to Taxi drivers within certain communities. I developed Taximoni using NuxtJS and Ant design`
+  },
+  {
+    id: 'sonoracredit',
+    category: 'web',
+    title: 'Sonora Credit',
+    image: '/images/projects/sonoracredit.png',
+    link: 'https://sonoracredit.com',
+    description: `Sonora credit provides simple and unique loans for all categories of people including businesses and individuals. I developed Sonora credit using NextJS and Material css`
   },
   // {
   //   id: 'vendor-advisor',
