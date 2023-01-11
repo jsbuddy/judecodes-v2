@@ -18,7 +18,6 @@ export default function Home() {
     <>
       <Head>
         <title>Jude Francis</title>
-        <link rel="icon" href="/favicon.ico"/>
       </Head>
       <Navbar/>
       <Header/>
