@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Flex, SimpleGrid, Text, VStack } from "@chakra-ui/react";
-import { SiGit, SiKotlin, SiNodedotjs, SiNuxtdotjs, SiTailwindcss, SiWindows } from "react-icons/si";
+import { SiGit, SiGraphql, SiKotlin, SiNodedotjs, SiNuxtdotjs, SiTailwindcss } from "react-icons/si";
 import { RiAngularjsFill, RiReactjsFill, RiVuejsFill } from "react-icons/ri";
 import { TbBrandNextjs } from "react-icons/tb";
 import { MdOutlineAndroid } from "react-icons/md";
@@ -18,7 +18,7 @@ const items = [
   { name: 'Android', link: 'https://android.com', icon: <MdOutlineAndroid size="65"/> },
   { name: 'Figma', link: 'https://figma.com', icon: <CgFigma size="65"/> },
   { name: 'Git', link: 'https://git-scm.com', icon: <SiGit size="55"/> },
-  { name: 'Windows', link: 'https://windows.com', icon: <SiWindows size="55"/> },
+  { name: 'GraphQL', link: 'https://www.graphql.com/', icon: <SiGraphql size="55"/> },
 ];
 
 const Technologies = () => {
