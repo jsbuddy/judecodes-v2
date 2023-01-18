@@ -1,10 +1,11 @@
 import { Box, Button, Container, Flex, Grid, IconButton, Text, useColorMode, } from "@chakra-ui/react";
-import { FiExternalLink, FiGithub, FiX } from "react-icons/fi";
+import { FiGithub, FiX } from "react-icons/fi";
 import { MotionBox, MotionImage } from "./motion";
 import React, { useEffect, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useKey } from "react-use";
 import { useMixpanel } from "../hooks/use-mixpanel.js";
+import { RiExternalLinkLine } from "react-icons/ri";
 
 const ProjectDetails = ({ project, isOpen, onClose }) => {
   const { colorMode } = useColorMode();
@@ -46,6 +47,20 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
               ref={ rootRef } position="fixed" top="0" left="0" width="100%" height="100vh" zIndex="10"
               overflowY="auto"{ ...animations }
             >
+              <Box
+                position="fixed" px="8"
+                top={ { base: 'initial', md: '2.5rem' } }
+                right={ { base: '0', md: '3rem' } }
+                left={ { base: '0', md: 'initial' } }
+                bottom={ { base: '1.5rem', md: 'initial' } }
+              >
+                <Button
+                  variant="solid" leftIcon={ <FiX size="24"/> } rounded="full"
+                  onClick={ onClose } aria-label="close" w="full"
+                >
+                  Close
+                </Button>
+              </Box>
               <Container h="full" display="flex" flexDirection="column" py={ { base: 10, md: 10 } } maxW="700px">
                 <Flex w="full">
                   <Grid w="full" alignItems="center" gridTemplateColumns={ { base: "1fr", md: "1fr" } }>
@@ -59,7 +74,7 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
                       animate={ { opacity: 1, transition: { duration: 0.1 } } }
                       initial={ { opacity: 0 } } exit={ { opacity: 0 } }
                     >
-                      <Flex direction="column" align="flex-start" py={ { base: 8, md: 8 } } px={ { base: 8, md: 20 } }>
+                      <Flex direction="column" align="flex-start" py={ { base: 8, md: 8 } } px={ { base: 6, md: 20 } }>
                         <Flex align="center" justify="space-between" w="full">
                           <Box>
                             <Text
@@ -68,47 +83,34 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
                             >
                               { project.category }
                             </Text>
-                            <Text fontSize="2xl" fontWeight="semibold" mt="1">
+                            <Text fontSize="xl" fontWeight="semibold" mt="1">
                               { project.title }
                             </Text>
                           </Box>
-                          <Box
-                            position="fixed" px="8"
-                            top={ { base: 'initial', md: '2.5rem' } }
-                            right={ { base: '0', md: '3rem' } }
-                            left={ { base: '0', md: 'initial' } }
-                            bottom={ { base: '1.5rem', md: 'initial' } }
-                          >
+                          <Flex align="center" ml="8">
+                            {
+                              !!project.github && (
+                                <IconButton
+                                  as={ "a" } icon={ <FiGithub/> } href={ project.github } rounded="30" target="_blank"
+                                  mr="5" aria-label="github"
+                                />
+                              )
+                            }
                             <Button
-                              variant="solid" leftIcon={ <FiX size="24"/> } rounded="full"
-                              onClick={ onClose } aria-label="close" w="full"
+                              onClick={ handleVisit } rightIcon={ <RiExternalLinkLine/> }
+                              rounded="30" px="5" variant="outline" size="sm"
+                              color={ colorMode === 'light' ? '#fff' : 'gray.900' }
+                              backgroundColor={ colorMode === 'light' ? 'gray.800' : 'gray.200' }
+                              _hover={ { background: colorMode === 'light' ? 'gray.700' : 'gray.50' } }
+                              _active={ { background: colorMode === 'light' ? 'gray.600' : 'gray.400' } }
                             >
-                              Close
+                              Visit
                             </Button>
-                          </Box>
+                          </Flex>
                         </Flex>
-                        <Text fontSize="1.05rem" mt="4" opacity=".9">
+                        <Text fontSize="1.06rem" mt="6" opacity=".8">
                           { project.description }
                         </Text>
-                        <Flex mt="8">
-                          {
-                            !!project.github && (
-                              <IconButton
-                                as={ "a" } icon={ <FiGithub/> } href={ project.github } rounded="30" target="_blank"
-                                mr="5" aria-label="github"
-                              />
-                            )
-                          }
-                          <Button
-                            onClick={ handleVisit } rightIcon={ <FiExternalLink/> } rounded="30" px="5" variant="outline"
-                            color={ colorMode === 'light' ? '#fff' : 'gray.900' }
-                            backgroundColor={ colorMode === 'light' ? 'gray.800' : 'gray.200' }
-                            _hover={ { background: colorMode === 'light' ? 'gray.700' : 'gray.50' } }
-                            _active={ { background: colorMode === 'light' ? 'gray.600' : 'gray.400' } }
-                          >
-                            Visit
-                          </Button>
-                        </Flex>
                       </Flex>
                     </MotionBox>
                   </Grid>
