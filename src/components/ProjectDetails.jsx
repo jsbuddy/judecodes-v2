@@ -47,20 +47,6 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
               ref={ rootRef } position="fixed" top="0" left="0" width="100%" height="100vh" zIndex="10"
               overflowY="auto"{ ...animations }
             >
-              <Box
-                position="fixed" px="8"
-                top={ { base: 'initial', md: '2.5rem' } }
-                right={ { base: '0', md: '3rem' } }
-                left={ { base: '0', md: 'initial' } }
-                bottom={ { base: '1.5rem', md: 'initial' } }
-              >
-                <Button
-                  variant="solid" leftIcon={ <FiX size="24"/> } rounded="full"
-                  onClick={ onClose } aria-label="close" w="full"
-                >
-                  Close
-                </Button>
-              </Box>
               <Container h="full" display="flex" flexDirection="column" py={ { base: 10, md: 10 } } maxW="700px">
                 <Flex w="full">
                   <Grid w="full" alignItems="center" gridTemplateColumns={ { base: "1fr", md: "1fr" } }>
@@ -74,6 +60,20 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
                       animate={ { opacity: 1, transition: { duration: 0.1 } } }
                       initial={ { opacity: 0 } } exit={ { opacity: 0 } }
                     >
+                      <Box
+                        position="fixed" px="8"
+                        top={ { base: 'initial', md: '2.5rem' } }
+                        right={ { base: '0', md: '3rem' } }
+                        left={ { base: '0', md: 'initial' } }
+                        bottom={ { base: '1.5rem', md: 'initial' } }
+                      >
+                        <Button
+                          variant="solid" leftIcon={ <FiX size="24"/> } rounded="full"
+                          onClick={ onClose } aria-label="close" w="full"
+                        >
+                          Close
+                        </Button>
+                      </Box>
                       <Flex direction="column" align="flex-start" py={ { base: 8, md: 8 } } px={ { base: 6, md: 20 } }>
                         <Flex align="center" justify="space-between" w="full">
                           <Box>
