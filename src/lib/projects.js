@@ -2,7 +2,7 @@ let projects = [
   {
     id: 'clan',
     category: 'web',
-    title: 'Clan',
+    title: 'Clan africa',
     image: '/images/projects/clan.png',
     link: 'https://creditclan.com',
     description: `Clan helps businesses & individuals offer point of need credit to consumers across Africa. As frontend team lead I worked on and supervised the development of Creditclan's official website which was built using VueJS and Bootstrap`
@@ -69,14 +69,14 @@ let projects = [
     link: 'https://fieldoracle.com',
     description: `Fieldoracle is an online marketplace connecting researchers with freelance agents to assist with data collection on the field. I developed the UI elements and components used in Fieldoracle using Vue JS and Tailwind CSS`
   },
-  {
-    id: 'taximoni',
-    category: 'web',
-    title: 'Taximoni',
-    image: '/images/projects/taximoni.png',
-    link: 'https://taximoni.com',
-    description: `Taximoni offers flexible loans to Taxi drivers within certain communities. I developed Taximoni using NuxtJS and Ant design`
-  },
+  // {
+  //   id: 'taximoni',
+  //   category: 'web',
+  //   title: 'Taximoni',
+  //   image: '/images/projects/taximoni.png',
+  //   link: 'https://taximoni.com',
+  //   description: `Taximoni offers flexible loans to Taxi drivers within certain communities. I developed Taximoni using NuxtJS and Ant design`
+  // },
   {
     id: 'sonoracredit',
     category: 'web',
