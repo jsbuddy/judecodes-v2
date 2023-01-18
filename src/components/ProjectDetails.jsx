@@ -98,7 +98,7 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
                             }
                             <Button
                               onClick={ handleVisit } rightIcon={ <RiExternalLinkLine/> }
-                              rounded="30" px="5" variant="outline" size="sm"
+                              rounded="30" px="5" variant="outline" size={ { base: 'sm', md: 'md' } }
                               color={ colorMode === 'light' ? '#fff' : 'gray.900' }
                               backgroundColor={ colorMode === 'light' ? 'gray.800' : 'gray.200' }
                               _hover={ { background: colorMode === 'light' ? 'gray.700' : 'gray.50' } }
