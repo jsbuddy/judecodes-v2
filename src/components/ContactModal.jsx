@@ -1,11 +1,11 @@
 import React from 'react';
 import {
   Flex,
+  Heading,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalHeader,
   ModalOverlay,
   SimpleGrid,
   Text,
@@ -32,18 +32,18 @@ const ContactModal = ({ isOpen, onClose }) => {
   return (
     <Modal onClose={ onClose } isOpen={ isOpen } isCentered size="lg">
       <ModalOverlay/>
-      <ModalContent bg={ useColorModeValue('white', '#26262f') } rounded="2xl">
-        <Flex align="center" justify="space-between" pt="10" pb="0" px={ { base: 8, md: 10 } }>
-          <ModalHeader p="0" whiteSpace="nowrap" fontSize="2xl">Get in touch</ModalHeader>
-          <ModalCloseButton position="relative" inset="initial"/>
-        </Flex>
-        <ModalBody py="12" px={ { base: 8, md: 10 } }>
+      <ModalContent bg={ useColorModeValue('white', 'rgb(36 41 47)') } rounded="xl" p="0">
+        <ModalBody py="12" px={ { base: 8, md: 12 } }>
+          <Flex align="center" justify="space-between" mb="10">
+            <Heading size="md">Get in touch</Heading>
+            <ModalCloseButton position="relative" inset="initial"/>
+          </Flex>
           <SimpleGrid columns={ { base: 3, md: 3 } } spacing={ { base: 3, md: 4 } }>
             <Flex
               onClick={ () => handleClick('Email', 'mailto:judecodes@gmail.com') }
               direction="column" align="center" border="1px solid" cursor="pointer"
               borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
-              py={ { base: 6, md: 8 } }
+              py={ { base: 8, md: 10 } }
               _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
             >
               <RiMailSendLine size="36"/>
@@ -53,7 +53,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               onClick={ () => handleClick('Github', 'https://github.com/jsbuddy') }
               direction="column" align="center" border="1px solid" cursor="pointer"
               borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
-              py={ { base: 6, md: 8 } }
+              py={ { base: 8, md: 10 } }
               _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
             >
               <RiGithubLine size="36"/>
@@ -63,7 +63,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               onClick={ () => handleClick('Codepen', 'https://codepen.io/judecodes') }
               direction="column" align="center" border="1px solid" cursor="pointer"
               borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
-              py={ { base: 6, md: 8 } }
+              py={ { base: 8, md: 10 } }
               _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
             >
               <RiCodepenLine size="36"/>
@@ -73,7 +73,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               onClick={ () => handleClick('Telegram', 'https://t.me/judecodes') }
               direction="column" align="center" border="1px solid" cursor="pointer"
               borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
-              py={ { base: 6, md: 8 } }
+              py={ { base: 8, md: 10 } }
               _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
             >
               <RiTelegramLine size="36"/>
@@ -83,7 +83,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               onClick={ () => handleClick('Linkedin', 'https://www.linkedin.com/in/judecodes/') }
               direction="column" align="center" border="1px solid" cursor="pointer"
               borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
-              py={ { base: 6, md: 8 } }
+              py={ { base: 8, md: 10 } }
               _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
             >
               <RiLinkedinLine size="36"/>
@@ -93,7 +93,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               onClick={ () => handleClick('Twitter', 'https://twitter.com/judecodes') }
               direction="column" align="center" border="1px solid" cursor="pointer"
               borderColor={ useColorModeValue("blackAlpha.200", "whiteAlpha.200") } rounded="2xl" px="8"
-              py={ { base: 6, md: 8 } }
+              py={ { base: 8, md: 10 } }
               _hover={ { bg: useColorModeValue('blackAlpha.50', 'whiteAlpha.50') } }
             >
               <RiTwitterFill size="36"/>

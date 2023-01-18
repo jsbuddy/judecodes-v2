@@ -21,10 +21,10 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
   const animations = {
     variants: {
       in: {
-        background: isDark ? "rgba(13, 16, 21, 0.98)" : "rgba(255, 255, 255, .98)",
+        background: isDark ? 'rgba(12, 14, 16, 0.992)' : 'rgba(255, 255, 255, .98)',
       },
       out: {
-        background: isDark ? "rgba(0, 0, 0, 0)" : "rgba(255, 255, 255, 0)",
+        background: isDark ? 'rgba(0, 0, 0, 0)' : 'rgba(255, 255, 255, 0)',
       },
     },
     animate: "in",
@@ -35,7 +35,7 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
   const handleVisit = () => {
     window.open(project.link, '_blank');
     track(`Visited project - ${ project.title }`);
-  }
+  };
 
   return (
     <>
@@ -46,9 +46,9 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
               ref={ rootRef } position="fixed" top="0" left="0" width="100%" height="100vh" zIndex="10"
               overflowY="auto"{ ...animations }
             >
-              <Container h="full" display="flex" flexDirection="column" py="10" maxW="7xl">
-                <Flex flexGrow="1" alignItems="center" w="full">
-                  <Grid w="full" alignItems="center" gridTemplateColumns={ { base: "1fr", md: "2fr 1.5fr" } }>
+              <Container h="full" display="flex" flexDirection="column" py={ { base: 10, md: 10 } } maxW="700px">
+                <Flex w="full">
+                  <Grid w="full" alignItems="center" gridTemplateColumns={ { base: "1fr", md: "1fr" } }>
                     <MotionBox layoutId={ `project-${ project.id }` } w="full">
                       <MotionImage
                         layoutId={ `project-image-${ project.id }` } src={ project.image } objectFit="cover" rounded="lg"
@@ -59,23 +59,35 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
                       animate={ { opacity: 1, transition: { duration: 0.1 } } }
                       initial={ { opacity: 0 } } exit={ { opacity: 0 } }
                     >
-                      <Flex direction="column" align="flex-start" py={ { base: 10, md: 5 } } px={ { base: 8, md: 10 } }>
+                      <Flex direction="column" align="flex-start" py={ { base: 8, md: 8 } } px={ { base: 8, md: 20 } }>
                         <Flex align="center" justify="space-between" w="full">
                           <Box>
-                            <Text fontSize="sm" fontWeight="medium" color="GrayText" textTransform="uppercase"
-                                  lineHeight="1">
+                            <Text
+                              fontSize="xs" fontWeight="medium" color="GrayText" textTransform="uppercase"
+                              lineHeight="1"
+                            >
                               { project.category }
                             </Text>
-                            <Text fontSize="2xl" fontWeight="semibold" mt="2">
+                            <Text fontSize="2xl" fontWeight="semibold" mt="1">
                               { project.title }
                             </Text>
                           </Box>
-                          <IconButton
-                            variant="ghost" colorScheme="red" icon={ <FiX size="24"/> } rounded="full"
-                            onClick={ onClose } aria-label="close" ml="4"
-                          />
+                          <Box
+                            position="fixed" px="8"
+                            top={ { base: 'initial', md: '2.5rem' } }
+                            right={ { base: '0', md: '3rem' } }
+                            left={ { base: '0', md: 'initial' } }
+                            bottom={ { base: '1.5rem', md: 'initial' } }
+                          >
+                            <Button
+                              variant="solid" leftIcon={ <FiX size="24"/> } rounded="full"
+                              onClick={ onClose } aria-label="close" w="full"
+                            >
+                              Close
+                            </Button>
+                          </Box>
                         </Flex>
-                        <Text fontSize="1.1rem" mt="6">
+                        <Text fontSize="1.05rem" mt="4" opacity=".9">
                           { project.description }
                         </Text>
                         <Flex mt="8">
@@ -88,9 +100,11 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
                             )
                           }
                           <Button
-                            onClick={ handleVisit } rightIcon={ <FiExternalLink/> } rounded="30"
-                            px="5" backgroundColor="gray.800" color="#fff" _hover={ { background: "gray.900" } }
-                            _active={ { background: "gray.900" } }
+                            onClick={ handleVisit } rightIcon={ <FiExternalLink/> } rounded="30" px="5" variant="outline"
+                            color={ colorMode === 'light' ? '#fff' : 'gray.900' }
+                            backgroundColor={ colorMode === 'light' ? 'gray.800' : 'gray.200' }
+                            _hover={ { background: colorMode === 'light' ? 'gray.700' : 'gray.50' } }
+                            _active={ { background: colorMode === 'light' ? 'gray.600' : 'gray.400' } }
                           >
                             Visit
                           </Button>
