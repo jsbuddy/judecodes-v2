@@ -1,9 +1,8 @@
 import React from 'react';
 import { Container, Flex, SimpleGrid, Text, VStack } from "@chakra-ui/react";
-import { SiGit, SiGraphql, SiKotlin, SiNodedotjs, SiNuxtdotjs, SiTailwindcss } from "react-icons/si";
+import { SiDocker, SiGit, SiGraphql, SiKotlin, SiNodedotjs, SiNuxtdotjs, SiTailwindcss } from "react-icons/si";
 import { RiAngularjsFill, RiReactjsFill, RiVuejsFill } from "react-icons/ri";
 import { TbBrandNextjs } from "react-icons/tb";
-import { MdOutlineAndroid } from "react-icons/md";
 import { CgFigma } from "react-icons/cg";
 
 const items = [
@@ -15,7 +14,7 @@ const items = [
   { name: 'Nuxt JS', link: 'https://nuxtjs.org', icon: <SiNuxtdotjs size="65"/> },
   { name: 'Angular JS', link: 'https://angular.io', icon: <RiAngularjsFill size="65"/> },
   { name: 'Kotlin', link: 'https://kotlinlang.org', icon: <SiKotlin size="45"/> },
-  { name: 'Android', link: 'https://android.com', icon: <MdOutlineAndroid size="65"/> },
+  { name: 'Docker', link: 'https://docker.com', icon: <SiDocker size="65"/> },
   { name: 'Figma', link: 'https://figma.com', icon: <CgFigma size="65"/> },
   { name: 'Git', link: 'https://git-scm.com', icon: <SiGit size="55"/> },
   { name: 'GraphQL', link: 'https://www.graphql.com/', icon: <SiGraphql size="55"/> },
