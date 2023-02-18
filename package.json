@@ -8,17 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.4.9",
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@vercel/analytics": "^0.1.8",
-    "framer-motion": "^9.0.1",
+    "@chakra-ui/react": "^2.5.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@vercel/analytics": "^0.1.10",
+    "framer-motion": "^9.0.4",
     "mixpanel-browser": "^2.45.0",
     "next": "^13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-use": "^17.4.0",
-    "sass": "^1.58.0"
+    "sass": "^1.58.3"
   }
 }
