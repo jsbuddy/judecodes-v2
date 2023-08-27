@@ -48,7 +48,7 @@ const Header = () => {
               <Avatar
                 display={ { base: 'none', md: 'block' } }
                 width={ { base: '100px', lg: '180px' } } height={ { base: '100px', lg: '180px' } }
-                src="/images/profile.jpg" alt="Jude Francis"
+                src="https://gravatar.com/avatar/274b47a5cf3030011b4110e61792d44c?s=400" alt="Jude Francis"
               />
             </Flex>
           </motion.div>
