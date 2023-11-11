@@ -1,35 +1,7 @@
-import { Box, Text } from "@chakra-ui/react";
 import { motion, usePresence } from "framer-motion";
-import { MotionBox, MotionImage } from "./motion";
 
 const Project = ({ project, onClick }) => {
   const [isPresent, safeToRemove] = usePresence();
-
-  const props = {
-    layout: true,
-    style: {
-      position: isPresent ? "static" : "absolute",
-    },
-    initial: "out",
-    whileTap: "tapped",
-    animate: isPresent ? "in" : "out",
-    exit: "out",
-    variants: {
-      in: {
-        y: 0,
-        opacity: 1,
-        transition: {
-          type: "spring",
-          duration: 1.5,
-        },
-      },
-      out: { y: 20, opacity: 0 },
-      tapped: { scale: 0.98, opacity: 0.5, transition: { duration: 0.1 } },
-    },
-    onAnimationComplete: () => !isPresent && safeToRemove(),
-    transition: { type: "spring", stiffness: 500, damping: 50, mass: 1 },
-    onClick: () => onClick(),
-  };
 
   const card = {
     rest: { opacity: 0, y: 10 },
@@ -38,35 +10,47 @@ const Project = ({ project, onClick }) => {
 
   return (
     <>
-      <motion.div { ...props }>
-        <Box position="relative" overflow="hidden" rounded={ { base: "sm", md: "lg" } }>
-          <MotionBox layoutId={ `project-${ project.id }` } w="full" h={ { base: '270px', md: '310px' } }>
-            <MotionImage
-              layoutId={ `project-image-${ project.id }` } src={ project.image } w="full" h="full" zIndex="1"
-              rounded={ { base: "sm", md: "lg" } } objectFit="cover"
+      <motion.div
+        layout
+        initial="out"
+        animate={ isPresent ? "in" : "out" }
+        exit="out"
+        whileTap="tapped"
+        variants={ {
+          in: { y: 0, opacity: 1, transition: { type: "spring", duration: 1.5, }, },
+          out: { y: 20, opacity: 0 },
+          tapped: { scale: 0.98, opacity: 0.5, transition: { duration: 0.1 } },
+        } }
+        style={ { position: isPresent ? "static" : "absolute", } }
+        transition={ { type: "spring", stiffness: 500, damping: 50, mass: 1 } }
+        onAnimationComplete={ () => !isPresent && safeToRemove() }
+        onClick={ () => onClick() }
+      >
+        <div className="relative rounded-sm md:rounded-lg">
+          <div className="w-full aspect-[4.9/3]">
+            <motion.img
+              layoutId={ `project-image-${ project.id }` } src={ project.image } alt={ project.title }
+              className="w-full h-full z-[1] rounded-2xl object-cover"
             />
-          </MotionBox>
-          <MotionBox
-            cursor="pointer" px="2" py="6" width="full" height="full" display="flex" alignItems="flex-end"
-            whileHover="hover" initial="rest" animate="rest" variants={ card } zIndex="2"
-            position="absolute" inset="0"
+          </div>
+          <motion.div
+            className="absolute inset-0 px-2 py-6 w-full h-full flex items-end cursor-pointer z-[2]"
+            whileHover="hover" initial="rest" animate="rest" variants={ card }
           >
-            <MotionBox
-              display="flex" width="300px" backgroundColor="orange.800" color="white" py="3" px="4"
-              position="absolute" bottom="45px" left="50%" transform="translateX(-50%)" rounded="lg"
-              style={ { backdropFilter: "blur(3px)" } }
+            <motion.div
+              className="absolute left-1/2 bottom-[45px] -translate-x-1/2 backdrop-blur-md rounded-lg flex w-[300px] bg-orange-800 text-white py-3 px-4"
             >
-              <Box alignItems="start">
-                <Text fontSize="xs" fontWeight="medium" textTransform="uppercase" lineHeight="1">
+              <div>
+                <p className="text-xs font-medium uppercase">
                   { project.category }
-                </Text>
-                <Text fontSize="md" lineHeight="1" fontWeight="medium" mt="1">
+                </p>
+                <p className="text-md font-medium mt-1">
                   { project.title }
-                </Text>
-              </Box>
-            </MotionBox>
-          </MotionBox>
-        </Box>
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
       </motion.div>
     </>
   );

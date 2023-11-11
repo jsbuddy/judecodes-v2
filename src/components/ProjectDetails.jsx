@@ -1,37 +1,19 @@
-import { Box, Button, Container, Flex, Grid, IconButton, Text, useColorMode, } from "@chakra-ui/react";
-import { FiGithub, FiX } from "react-icons/fi";
-import { MotionBox, MotionImage } from "./motion";
-import React, { useEffect, useRef } from "react";
-import { AnimatePresence } from "framer-motion";
+import { FiGithub } from "react-icons/fi";
+import React, { useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useKey } from "react-use";
 import { useMixpanel } from "../hooks/use-mixpanel.js";
-import { RiExternalLinkLine } from "react-icons/ri";
+import { RiArrowRightUpLine, RiCloseLine } from "react-icons/ri";
+import { Button, Card } from "@nextui-org/react"
 
 const ProjectDetails = ({ project, isOpen, onClose }) => {
-  const { colorMode } = useColorMode();
-  const isDark = colorMode === "dark";
   const { track } = useMixpanel();
-  const rootRef = useRef(null);
   useKey('Escape', onClose);
 
   useEffect(() => {
     if (isOpen) document.body.style.overflow = 'hidden';
     else document.body.style.overflowY = 'auto';
   }, [isOpen]);
-
-  const animations = {
-    variants: {
-      in: {
-        background: isDark ? 'rgba(12, 14, 16, 0.992)' : 'rgba(255, 255, 255, .98)',
-      },
-      out: {
-        background: isDark ? 'rgba(0, 0, 0, 0)' : 'rgba(255, 255, 255, 0)',
-      },
-    },
-    animate: "in",
-    exit: "out",
-    initial: "out",
-  };
 
   const handleVisit = () => {
     window.open(project.link, '_blank');
@@ -40,83 +22,70 @@ const ProjectDetails = ({ project, isOpen, onClose }) => {
 
   return (
     <>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {
           (isOpen && !!project) && (
-            <MotionBox
-              ref={ rootRef } position="fixed" top="0" left="0" width="100%" height="100vh" zIndex="10"
-              overflowY="auto"{ ...animations }
+            <motion.div
+              id="overlay"
+              animate={ { opacity: 1 } }
+              exit={ { opacity: 0 } }
+              initial={ { opacity: 0 } }
+              className="overlay fixed top-0 left-0 w-full h-screen z-[10] overflow-y-auto bg-white/90 dark:bg-black/90 backdrop-blur-lg"
+              onClick={ e => {
+                if (e.target.className.match(/overlay|container/gi)) onClose()
+              } }
             >
-              <Container h="full" display="flex" flexDirection="column" py={ { base: 10, md: 10 } } maxW="700px">
-                <Flex w="full">
-                  <Grid w="full" alignItems="center" gridTemplateColumns={ { base: "1fr", md: "1fr" } }>
-                    <MotionBox layoutId={ `project-${ project.id }` } w="full">
-                      <MotionImage
-                        layoutId={ `project-image-${ project.id }` } src={ project.image } objectFit="cover" rounded="lg"
-                        w="full"
-                      />
-                    </MotionBox>
-                    <MotionBox
-                      animate={ { opacity: 1, transition: { duration: 0.1 } } }
-                      initial={ { opacity: 0 } } exit={ { opacity: 0 } }
-                    >
-                      <Box
-                        position="fixed" px="8"
-                        top={ { base: 'initial', md: '2.5rem' } }
-                        right={ { base: '0', md: '3rem' } }
-                        left={ { base: '0', md: 'initial' } }
-                        bottom={ { base: '1.5rem', md: 'initial' } }
-                      >
-                        <Button
-                          variant="solid" leftIcon={ <FiX size="24"/> } rounded="full"
-                          onClick={ onClose } aria-label="close" w="full"
-                        >
-                          Close
-                        </Button>
-                      </Box>
-                      <Flex direction="column" align="flex-start" py={ { base: 8, md: 8 } } px={ { base: 6, md: 20 } }>
-                        <Flex align="center" justify="space-between" w="full">
-                          <Box>
-                            <Text
-                              fontSize="xs" fontWeight="medium" color="GrayText" textTransform="uppercase"
-                              lineHeight="1"
-                            >
-                              { project.category }
-                            </Text>
-                            <Text fontSize="xl" fontWeight="semibold" mt="1">
-                              { project.title }
-                            </Text>
-                          </Box>
-                          <Flex align="center" ml="8">
-                            {
-                              !!project.github && (
-                                <IconButton
-                                  as={ "a" } icon={ <FiGithub/> } href={ project.github } rounded="30" target="_blank"
-                                  mr="5" aria-label="github"
-                                />
-                              )
-                            }
+              <Button
+                isIconOnly variant="flat" radius="full"
+                onClick={ onClose } aria-label="close" className="fixed top-6 right-4 md:top-10 md:right-16"
+              >
+                <RiCloseLine size="20"/>
+              </Button>
+              <div className="container !max-w-[700px] pt-20 pb-10 md:pt-10 mb:pb-20 flex flex-col space-y-6">
+                <motion.img
+                  layoutId={ `project-image-${ project.id }` } src={ project.image } alt={ project.title }
+                  className="object-cover rounded-2xl w-full"
+                />
+                <motion.div
+                  animate={ { opacity: 1, transition: { duration: 0.1 } } }
+                  initial={ { opacity: 0 } } exit={ { opacity: 0 } }
+                >
+                  <Card className="py-8 px-9 md:px-10">
+                    <div className="flex items-center justify-between w-full">
+                      <div>
+                        <p className="text-xs uppercase opacity-75">
+                          { project.category }
+                        </p>
+                        <p className="text-lg font-semibold">
+                          { project.title }
+                        </p>
+                      </div>
+                      <div className="flex items-center ml-8">
+                        {
+                          !!project.github && (
                             <Button
-                              onClick={ handleVisit } rightIcon={ <RiExternalLinkLine/> }
-                              rounded="30" px="5" variant="outline" size={ { base: 'sm', md: 'md' } }
-                              color={ colorMode === 'light' ? '#fff' : 'gray.900' }
-                              backgroundColor={ colorMode === 'light' ? 'gray.800' : 'gray.200' }
-                              _hover={ { background: colorMode === 'light' ? 'gray.700' : 'gray.50' } }
-                              _active={ { background: colorMode === 'light' ? 'gray.600' : 'gray.400' } }
+                              variant="flat" isIconOnly as="a" href={ project.github } target="_blank"
+                              className="rounded-full mr-2 md:mr-2" aria-label="github"
                             >
-                              Visit
+                              <FiGithub size="20"/>
                             </Button>
-                          </Flex>
-                        </Flex>
-                        <Text fontSize="1.06rem" mt="6" opacity=".8">
-                          { project.description }
-                        </Text>
-                      </Flex>
-                    </MotionBox>
-                  </Grid>
-                </Flex>
-              </Container>
-            </MotionBox>
+                          )
+                        }
+                        <Button
+                          onClick={ handleVisit } endContent={ <RiArrowRightUpLine/> }
+                          radius="full" px="5" color="primary"
+                        >
+                          Visit
+                        </Button>
+                      </div>
+                    </div>
+                    <p className="text-base mt-6 opacity-80">
+                      { project.description }
+                    </p>
+                  </Card>
+                </motion.div>
+              </div>
+            </motion.div>
           )
         }
       </AnimatePresence>

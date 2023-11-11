@@ -1,9 +1,10 @@
-import { Container, SimpleGrid, useDisclosure } from "@chakra-ui/react";
 import React, { useState } from "react";
 import projects from "../lib/projects";
 import Project from "./Project";
 import ProjectDetails from "./ProjectDetails.jsx";
 import { useMixpanel } from "../hooks/use-mixpanel.js";
+import { useDisclosure } from "@nextui-org/react";
+import { LayoutGroup } from "framer-motion";
 
 const Projects = () => {
   const { isOpen: isDetailsOpen, onOpen: onDetailsOpen, onClose: onDetailsClose } = useDisclosure();
@@ -17,23 +18,23 @@ const Projects = () => {
   }
 
   return (
-    <>
-      <Container maxW="full" overflow="hidden" px={ { base: 0, md: 4 } }>
-        <SimpleGrid columns={ { base: 1, md: 2, lg: 3 } } spacing={ { base: 4, lg: 4 } } overflow="hidden">
+    <LayoutGroup>
+      <div className="container !max-w-[1600px]">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {
             projects.map((project) => (
               <Project key={ project.id } project={ project } onClick={ () => handleOpen(project) }/>
             ))
           }
-        </SimpleGrid>
-      </Container>
+        </div>
+      </div>
 
       <ProjectDetails
         project={ current }
         isOpen={ isDetailsOpen }
         onClose={ onDetailsClose }
       />
-    </>
+    </LayoutGroup>
   );
 };
 
