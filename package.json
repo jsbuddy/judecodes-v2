@@ -10,20 +10,20 @@
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
     "@vercel/analytics": "^1.1.1",
-    "framer-motion": "^10.16.4",
-    "geist": "^1.1.0",
-    "mixpanel-browser": "^2.47.0",
-    "next": "^14.0.2",
+    "framer-motion": "^10.18.0",
+    "geist": "^1.2.0",
+    "mixpanel-browser": "^2.48.1",
+    "next": "^14.0.4",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.11.0",
-    "react-use": "^17.4.0",
-    "sass": "^1.69.5"
+    "react-icons": "^5.0.1",
+    "react-use": "^17.4.2",
+    "sass": "^1.69.7"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5"
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1"
   }
 }
